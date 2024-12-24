@@ -32,3 +32,4 @@ Concepts to double-check before submitting code, based on common mistakes:
 Concept were learned from the following resources:
 
 - [Hyperskill's Introduction to C++ course](https://hyperskill.org/courses/74-introduction-to-c)
+- [Boot.Dev's back-end course](https://www.boot.dev/tracks/backend)
