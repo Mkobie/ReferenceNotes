@@ -6,15 +6,16 @@ set(CMAKE_CXX_STANDARD 98)
 # Enable folders for IDEs
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_subdirectory(data_types)
-add_subdirectory(operators)
 add_subdirectory(control_flow)
-add_subdirectory(functions)
-add_subdirectory(stl)
-add_subdirectory(exception_handling)
-add_subdirectory(working_with_external_data)
+add_subdirectory(data_types)
+add_subdirectory(dependency_injection)
 add_subdirectory(dynamic_memory)
+add_subdirectory(exception_handling)
+add_subdirectory(functions)
 add_subdirectory(oop)
+add_subdirectory(operators)
+add_subdirectory(stl)
+add_subdirectory(working_with_external_data)
 
 add_custom_target(run_all
         COMMAND ${CMAKE_BINARY_DIR}/control_flow/control_flow_loops
@@ -28,6 +29,8 @@ add_custom_target(run_all
         COMMAND ${CMAKE_BINARY_DIR}/data_types/pointers_and_references
         COMMAND ${CMAKE_BINARY_DIR}/data_types/strings
         COMMAND ${CMAKE_BINARY_DIR}/data_types/structures
+
+        COMMAND ${CMAKE_BINARY_DIR}/dependency_injection/dependency_injection
 
         COMMAND ${CMAKE_BINARY_DIR}/dynamic_memory/dynamic_memory
 

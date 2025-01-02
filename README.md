@@ -15,7 +15,7 @@ For examples with helper files, use:
 ```bash
 g++ -std=c++98 path/to/*.cpp -o output && ./output
 ```
-To compile and run all c++ examples, execute the run.sh script.
+To compile and run all c++ examples, execute the run.sh script in a Unix-like environment (eg use Linux, or WSL2).
 
 ### Checklist
 Concepts to double-check before submitting code, based on common mistakes:
@@ -29,7 +29,7 @@ Concepts to double-check before submitting code, based on common mistakes:
 
 
 ## Resources
-Concept were learned from the following resources:
+Concepts were learned from the following resources:
 
 - [Hyperskill's Introduction to C++ course](https://hyperskill.org/courses/74-introduction-to-c)
 - [Boot.Dev's back-end course](https://www.boot.dev/tracks/backend)
