@@ -5,6 +5,10 @@ Binary numbers have a 1s place, 2s place, 4s place, 8s place, etc
 Image from Boot.Dev programming course
 
 
+## Dependency injection
+Reference: https://hyperskill.org/learn/step/20580 
+
+
 ## The Zen of Python, by Tim Peters
 Beautiful is better than ugly.
 
