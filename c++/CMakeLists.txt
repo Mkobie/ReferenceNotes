@@ -9,6 +9,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(control_flow)
 add_subdirectory(data_types)
 add_subdirectory(dependency_injection)
+add_subdirectory(design_patterns)
 add_subdirectory(dynamic_memory)
 add_subdirectory(exception_handling)
 add_subdirectory(functions)
@@ -31,6 +32,8 @@ add_custom_target(run_all
         COMMAND ${CMAKE_BINARY_DIR}/data_types/structures
 
         COMMAND ${CMAKE_BINARY_DIR}/dependency_injection/dependency_injection
+
+        COMMAND ${CMAKE_BINARY_DIR}/design_patterns/strategy_pattern
 
         COMMAND ${CMAKE_BINARY_DIR}/dynamic_memory/dynamic_memory
 
