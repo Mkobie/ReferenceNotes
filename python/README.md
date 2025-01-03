@@ -1,5 +1,7 @@
-## Binary
+## Design patterns
+Reference: Head First Design Patterns, by Eric and Elisabeth Freeman
 
+## Binary
 Binary numbers have a 1s place, 2s place, 4s place, 8s place, etc
 ![](assets/binary_places.png)
 Image from Boot.Dev programming course
