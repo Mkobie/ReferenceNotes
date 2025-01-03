@@ -28,15 +28,16 @@ Image from Head First Design Patterns
 
 Use if you need:
 - Clear open/closed format
-- Nice decoupling and separation of concerns
+- Nice separation of concerns
   - In particular: things that vary to be separate from things that stay the same
+- Loose coupling: remaining coupling (client implementation of strategy) is explicit (if constructor DI is used)
 - Runtime flexibility
 - Reusability
 - To avoid excessive if-else conditionals
 
 Don't use if:
-- Generates excessive boilerplate code
-- Don't need dynamic behaviour, or couple conditionals can do it for you
-- Context class (the one using the strategy) gets complex
-- Need to optimize performance
-- Will have coupling between client and strategy classes
+- You don't like how much boilerplate code it generates
+- You don't need dynamic behaviour, or couple conditionals can do it for you
+- Your context class (the one using the strategy) gets complex
+- You need to optimize performance
+- You can't live with the level of coupling it creates between client and strategy classes
