@@ -1,16 +1,24 @@
 ## Checklist
-Concepts to double-check before submitting code, based on common mistakes:
+Things to double-check before submitting code, based on common mistakes:
+
+Concepts ("what" we're aiming for):
 - DRY: what is repeated?
 - YAGNI: what isn't being used (yet)?
+- SRP: what might cause this component to change? if >1 reasons, then the responsibility isn't single, is it.
 - Open/closed: when someone adds to this, will they modify existing code?
 - Is stuff decoupled? are different concepts/responsibilities mixed together in classes/methods?
-- Are concerns separated? what might cause this component to change? if >1 reasons, then poor separation of concerns.
-- Are things that  vary separated from what stays the same?
-- Composition over inheritance: "has a" where possible; use "is a" only when want to reuse ALL base class functionality across derived classes (and won't want to change it, eg at runtime), and there’s a clear hierarchical relationship.
-- Interfaces over implementation: describe "what it does" (behaviour) not "how it does it" (implementation)
 - Runtime flexibility: able to change in main fn?
-- DI: are dependencies visible/test-friendly (constructor), temp/short-lived (method), or optional/cyclic (setter)
 - OOP: sensible reflection of real world concepts?
+
+Principles ("how" we'll achieve it)
+- Composition over inheritance: "has a" where possible (composition); use "is a" (inheritance) only when want to reuse ALL base class functionality across derived classes (and won't want to change it, eg at runtime), and there’s a clear hierarchical relationship.
+  - Supports runtime flexibility & separation of concerns
+  - Note: base class is considered "fragile" if it's going to need changes that'll require changes in all its inheriting classes.
+- Interfaces over implementation: describe "what it does" (behaviour) not "how it does it" (implementation)
+  - Supports decoupling and open/closed principle
+- DI: are dependencies visible/test-friendly (constructor), temp/short-lived (method), or optional/cyclic (setter)
+  - Supports decoupling and testability
+- Are things that vary separated from what stays the same?
 
 ## Strategy pattern
 For encapsulating families of "stuff" separately and having them swappable at runtime without altering client code.
@@ -19,20 +27,16 @@ For encapsulating families of "stuff" separately and having them swappable at ru
 Image from Head First Design Patterns
 
 Use if you need:
-- Different actions in different circumstances
-  - Example: Sorting algorithms (e.g., bubble sort, quicksort, merge sort) that can be applied dynamically.
-- To deal with class behaviour that'll change frequently
-  - Example: A payment system that can switch between PayPal, credit card, and cryptocurrency processing.
-- Behaviour flexibility at runtime
-  - Example: A video game character that can switch between "melee attack," "magic attack," or "stealth mode" based on player input.
-- To get rid of excessive conditionals
-  - Example: A UI element that changes its rendering behavior (e.g., for dark mode, light mode, high contrast mode).
-- Separation of concerns
-  - Example: A pricing calculator that applies different discount strategies (e.g., seasonal discount, member discount).
+- Clear open/closed format
+- Nice decoupling and separation of concerns
+  - In particular: things that vary to be separate from things that stay the same
+- Runtime flexibility
+- Reusability
+- To avoid excessive if-else conditionals
 
 Don't use if:
-- Will generate excessive boilerplate code
+- Generates excessive boilerplate code
 - Don't need dynamic behaviour, or couple conditionals can do it for you
-- context class (the one using the strategy) gets complex
+- Context class (the one using the strategy) gets complex
 - Need to optimize performance
 - Will have coupling between client and strategy classes
