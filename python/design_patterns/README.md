@@ -5,7 +5,8 @@ Concepts to double-check before submitting code, based on common mistakes:
 - Open/closed: when someone adds to this, will they modify existing code?
 - Is stuff decoupled? are different concepts/responsibilities mixed together in classes/methods?
 - Are concerns separated? what might cause this component to change? if >1 reasons, then poor separation of concerns.
-- Composition over inheritance: "has a" where possible; use "is a" only when want to reuse functionality across derived classes, and there’s a clear hierarchical relationship.
+- Are things that  vary separated from what stays the same?
+- Composition over inheritance: "has a" where possible; use "is a" only when want to reuse ALL base class functionality across derived classes (and won't want to change it, eg at runtime), and there’s a clear hierarchical relationship.
 - Interfaces over implementation: describe "what it does" (behaviour) not "how it does it" (implementation)
 - Runtime flexibility: able to change in main fn?
 - DI: are dependencies visible/test-friendly (constructor), temp/short-lived (method), or optional/cyclic (setter)
