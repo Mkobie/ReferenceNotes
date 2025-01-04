@@ -11,6 +11,10 @@ Image from Boot.Dev programming course
 Reference: https://hyperskill.org/learn/step/20580 
 
 
+## Interface vs Base class
+- Interface for specifying a contract
+- Base class for providing resuable behaviour
+
 ## The Zen of Python, by Tim Peters
 Beautiful is better than ugly.
 
