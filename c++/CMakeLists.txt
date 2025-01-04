@@ -13,6 +13,7 @@ add_subdirectory(design_patterns)
 add_subdirectory(dynamic_memory)
 add_subdirectory(exception_handling)
 add_subdirectory(functions)
+add_subdirectory(interface_vs_base_class)
 add_subdirectory(oop)
 add_subdirectory(operators)
 add_subdirectory(stl)
@@ -41,6 +42,8 @@ add_custom_target(run_all
 
         COMMAND ${CMAKE_BINARY_DIR}/functions/functions
         COMMAND ${CMAKE_BINARY_DIR}/functions/template_functions
+
+        COMMAND ${CMAKE_BINARY_DIR}/interface_vs_base_class/interface_vs_base_class
 
         COMMAND ${CMAKE_BINARY_DIR}/oop/oop_basics
         COMMAND ${CMAKE_BINARY_DIR}/oop/oop_copy_depth
