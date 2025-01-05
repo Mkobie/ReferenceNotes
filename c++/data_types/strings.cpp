@@ -231,6 +231,21 @@ void demo_string_io() {
     cout << "Entered: " << entry << endl;
 }
 
+void demo_loop_through_strings() {
+    std::string text = "Hi!";
+
+    // Traditional
+    for (std::size_t i = 0; i < text.size(); ++i) {
+        std::cout << "Character at index " << i << ": " << text[i] << std::endl;
+    }
+
+    // With iterators
+    std::cout << "Using iterators:" << std::endl;
+    for (std::string::iterator it = text.begin(); it != text.end(); ++it) {
+        std::cout << *it << std::endl;
+    }
+}
+
 int main() {
     std::cout << "--------------------------" << std::endl;
     std::cout << "STRINGS" << std::endl;
@@ -258,6 +273,8 @@ int main() {
     demo_string_sizes();
     cout << endl;
     demo_string_io();
+    cout << endl;
+    demo_loop_through_strings();
 
     std::cout << "--------------------------" << std::endl << std::endl;
     return 0;
