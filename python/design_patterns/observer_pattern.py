@@ -21,19 +21,22 @@ class Subject(ABC):
 
 class Observer(ABC):
     @abstractmethod
+    def update(self, subject):
+        pass
+
+    @abstractmethod
     def update_push(self, temperature, humidity, pressure):
         pass
 
-    def update_pull(self, subject):
-        pass
+
 
 
 class WeatherData(Subject):  # Subject is only owner of data: loose coupling
     def __init__(self):
         self._observers = []  # Dynamic
-        self._temperature = 0.0
-        self._humidity = 0.0
-        self._pressure = 0.0  # extensible
+        self.temperature = 0.0
+        self.humidity = 0.0
+        self.pressure = 0.0  # extensible
 
     def register_observer(self, observer):
         self._observers.append(observer)
@@ -43,13 +46,13 @@ class WeatherData(Subject):  # Subject is only owner of data: loose coupling
 
     def notify_observers(self):
         for observer in self._observers:
-            observer.update_push(self._temperature, self._humidity, self._pressure)  # Subject PUSHES to observers via a common interface
-            observer.update_pull(self)  # vs PULL
+            observer.update_push(self.temperature, self.humidity, self.pressure)  # Subject PUSHES to observers via a common interface
+            observer.update(self)  # vs PULL
 
     def set_measurements(self, temperature, humidity, pressure):
-        self._temperature = temperature
-        self._humidity = humidity
-        self._pressure = pressure
+        self.temperature = temperature
+        self.humidity = humidity
+        self.pressure = pressure
         self.notify_observers()  # can add logic (e.g. java's "set_changed" functionality) s.t. observers aren't notified for every tiny change, only big enough ones, if desired.
 
 
@@ -65,9 +68,9 @@ class CurrentConditionsDisplay(Observer):
         self._humidity = humidity
         self.display()
 
-    def update_pull(self, subject):
-        self._temperature = subject.get_temperature()
-        self._humidity = subject.get_humidity()
+    def update(self, subject):
+        self._temperature = subject.temperature
+        self._humidity = subject.humidity
         self.display()
 
     def display(self):
@@ -85,8 +88,8 @@ class StatisticsDisplay(Observer):
         self._temperature_readings.append(temperature)
         self.display()
 
-    def update_pull(self, subject):
-        self._temperature_readings.append(subject.get_temperature())
+    def update(self, subject):
+        self._temperature_readings.append(subject.temperature)
         self.display()
 
     def display(self):
@@ -104,6 +107,11 @@ class ForecastDisplay(Observer):
     def update_push(self, temperature, humidity, pressure):
         self._last_pressure = self._current_pressure
         self._current_pressure = pressure
+        self.display()
+
+    def update(self, subject):
+        self._last_pressure = self._current_pressure
+        self._current_pressure = subject.pressure
         self.display()
 
     def display(self):
