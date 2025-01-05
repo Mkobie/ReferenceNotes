@@ -1,7 +1,19 @@
+<!-- TOC -->
+  * [Checklist](#checklist)
+    * [Concepts ("what" we're aiming for)](#concepts-what-were-aiming-for)
+    * [Principles ("how" we'll achieve it)](#principles-how-well-achieve-it)
+  * [Observer pattern](#observer-pattern)
+    * [Usage notes](#usage-notes)
+    * [Throwback to principles](#throwback-to-principles)
+  * [Strategy pattern](#strategy-pattern)
+    * [Usage notes](#usage-notes-1)
+    * [Throwback to principles](#throwback-to-principles-1)
+<!-- TOC -->
+
 ## Checklist
 Things to double-check before submitting code, based on common mistakes:
 
-Concepts ("what" we're aiming for):
+### Concepts ("what" we're aiming for)
 - DRY: 
   - what is repeated?
 - YAGNI: 
@@ -17,7 +29,7 @@ Concepts ("what" we're aiming for):
 - OOP: 
   - sensible reflection of real world concepts?
 
-Principles ("how" we'll achieve it)
+### Principles ("how" we'll achieve it)
 - What varies?
   - Separated things that vary from what stays the same
 - Interfaces vs implementation:
@@ -42,6 +54,7 @@ For notifying many dependents when observed object changes state, so they can up
 ![](assets/observer_pattern_specific.JPG)
 Images from Head First Design Patterns
 
+### Usage notes
 Use if you need:
 - Communication of state between objects...
 - ...in a one-to-many way
@@ -50,6 +63,7 @@ Use if you need:
 Don't use if:
 - You need a specific order of notifications for observers
 
+### Throwback to principles
 What varies?
 - Subject state
 - Number & type of observers
@@ -74,6 +88,7 @@ For encapsulating strategies (algorithms / families of "stuff") separately and h
 ![](assets/strategy_pattern.JPG)
 Image from Head First Design Patterns
 
+### Usage notes
 Use if you need:
 - Clear open/closed format
 - Nice separation of concerns
@@ -89,6 +104,7 @@ Don't use if:
 - Your context class (the one using the strategy) gets complex
 - You need to optimize performance
 
+### Throwback to principles
 What varies?
 - The strategies (the behaviour the client class "has")
 - The client base class structure and behaviour
