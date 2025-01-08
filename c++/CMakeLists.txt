@@ -34,6 +34,8 @@ add_custom_target(run_all
 
         COMMAND ${CMAKE_BINARY_DIR}/dependency_injection/dependency_injection
 
+        COMMAND ${CMAKE_BINARY_DIR}/design_patterns/observer_pattern_pull
+        COMMAND ${CMAKE_BINARY_DIR}/design_patterns/observer_pattern_push
         COMMAND ${CMAKE_BINARY_DIR}/design_patterns/strategy_pattern
 
         COMMAND ${CMAKE_BINARY_DIR}/dynamic_memory/dynamic_memory
