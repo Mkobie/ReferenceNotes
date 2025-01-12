@@ -52,6 +52,9 @@ Things to double-check before submitting code, based on common mistakes:
 ## Decorator pattern
 For adding responsibility to an object dynamically (flexible alternative to subclassing)
 
+Note: Although Python has "@decorators" in its language, these aren't the same as the decorator design pattern. 
+Python decorators add responsibility to a fn/method/class, but it's one-and-done, not dynamic composition.
+
 ![](assets/decorator_pattern_general.JPG)
 ![](assets/decorator_pattern_specific.JPG)
 Image from Head First Design Patterns
