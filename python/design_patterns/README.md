@@ -49,6 +49,53 @@ Things to double-check before submitting code, based on common mistakes:
   - Supports decoupling and testability
 
 
+## Factory patterns
+Clients can work with factory-made objects without knowing what exact type of object they're working with
+
+Factory method pattern: Defines an interface making one type of product; subclasses decide which type of product.
+
+Abstract factory pattern: Provides an interface for making families of related/dependent products that work together. Group by context, not type.
+
+Simple factory (not a pattern):
+![](assets/factory_simple.JPG)
+Factory method pattern:
+![](assets/factory_method_pattern_general.JPG)
+![](assets/factory_method_pattern_specific.JPG)
+Abstract factory pattern:
+![](assets/factory_abstract_pattern_general.JPG)
+![](assets/factory_abstract_pattern_specific.JPG)
+Images from Head First Design Patterns
+
+### Usage notes
+Use if you need:
+- Loose coupling
+- Open / closed (factory method)
+- Runtime flexibility (factory method)
+- Single responsibility (abstract factory)
+
+Don't use if:
+- Won't need it
+- Direct instantiation is sufficient
+- Tight coupling is ok
+
+
+### Throwback to principles
+What varies?
+- Specific type of object created. (method)
+- Context for groups of objects. (abstract)
+
+Interface vs implementation:
+- Both rely on interface to work.
+
+Composition vs inheritance:
+- Factory relies on inheritance: subclasses override the factory method.
+- Abstract uses inheritance: client uses its ref to the abstract factory to make its flavour of products.
+
+Coupling:
+- Is reduced via factories!
+- However, the factory method pattern does introduce a dependency on the subclass to achieve the product creation.
+
+
 ## Decorator pattern
 For adding responsibility to an object dynamically (flexible alternative to subclassing)
 
@@ -57,7 +104,7 @@ Python decorators add responsibility to a fn/method/class, but it's one-and-done
 
 ![](assets/decorator_pattern_general.JPG)
 ![](assets/decorator_pattern_specific.JPG)
-Image from Head First Design Patterns
+Images from Head First Design Patterns
 
 ### Usage notes
 Use if you need:
