@@ -1,16 +1,22 @@
+# Design patterns
+
 <!-- TOC -->
+* [Design patterns](#design-patterns)
   * [Checklist](#checklist)
     * [Concepts ("what" we're aiming for)](#concepts-what-were-aiming-for)
     * [Principles ("how" we'll achieve it)](#principles-how-well-achieve-it)
-  * [Decorator pattern](#decorator-pattern)
+  * [Factory patterns](#factory-patterns)
     * [Usage notes](#usage-notes)
     * [Throwback to principles](#throwback-to-principles)
-  * [Observer pattern](#observer-pattern)
+  * [Decorator pattern](#decorator-pattern)
     * [Usage notes](#usage-notes-1)
     * [Throwback to principles](#throwback-to-principles-1)
-  * [Strategy pattern](#strategy-pattern)
+  * [Observer pattern](#observer-pattern)
     * [Usage notes](#usage-notes-2)
     * [Throwback to principles](#throwback-to-principles-2)
+  * [Strategy pattern](#strategy-pattern)
+    * [Usage notes](#usage-notes-3)
+    * [Throwback to principles](#throwback-to-principles-3)
 <!-- TOC -->
 
 ## Checklist

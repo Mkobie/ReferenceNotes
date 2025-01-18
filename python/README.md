@@ -1,3 +1,14 @@
+# Python
+
+<!-- TOC -->
+* [Python](#python)
+  * [Design patterns](#design-patterns)
+  * [Binary](#binary)
+  * [Dependency injection](#dependency-injection)
+  * [Interface vs Base class](#interface-vs-base-class)
+  * [The Zen of Python, by Tim Peters](#the-zen-of-python-by-tim-peters)
+<!-- TOC -->
+
 ## Design patterns
 Reference: Head First Design Patterns, by Eric and Elisabeth Freeman
 
@@ -5,7 +16,6 @@ Reference: Head First Design Patterns, by Eric and Elisabeth Freeman
 Binary numbers have a 1s place, 2s place, 4s place, 8s place, etc
 ![](assets/binary_places.png)
 Image from Boot.Dev programming course
-
 
 ## Dependency injection
 Reference: https://hyperskill.org/learn/step/20580 
